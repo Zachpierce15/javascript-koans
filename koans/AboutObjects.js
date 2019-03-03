@@ -29,7 +29,7 @@ describe("About Objects", function() {
     };
    
     var battleCry = meglomaniac.battleCry(4);
-    expect("They are Pinky and the 5 Brain Brain Brain Brain").toMatch(battleCry);
+    expect("They are Pinky and the Brain Brain Brain Brain").toMatch(battleCry);
   });
 
   it("should confirm that when a function is attached to an object, 'this' refers to the object", function () {
@@ -44,8 +44,8 @@ describe("About Objects", function() {
       }
     };
    
-    expect(currentYear).toBe(FILL_ME_IN);
-    expect(meglomaniac.calculateAge()).toBe(FILL_ME_IN);
+    expect(currentYear).toBe(2019);
+    expect(meglomaniac.calculateAge()).toBe(49);
   });
 
   describe("'in' keyword", function() {
