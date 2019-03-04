@@ -68,7 +68,8 @@ describe("About Applying What We Have Learnt", function() {
       if (nextNum % 3 === 0 || nextNum % 5 === 0) {
         return acc + nextNum
       } else { return acc}
-    },0);    /* try chaining range() and reduce() */
+    },0);  
+      /* try chaining range() and reduce() */
 
     expect(233168).toBe(233168);
   });
@@ -83,7 +84,7 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    expect(ingredientCount['mushrooms']).toBe(2);
   });
 
   it("should count the ingredient occurrence (functional)", function () {
