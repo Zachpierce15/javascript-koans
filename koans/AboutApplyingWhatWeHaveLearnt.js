@@ -91,15 +91,25 @@ describe("About Applying What We Have Learnt", function() {
     var ingredientCount = { "{ingredient name}": 0 };
 
     /* chain() together map(), flatten() and reduce() */
- var result = _.chain(products.ingredients)
- .map(function(x) { return x})
+    var ingredients1 = []
+
+for (var i = 0; i < products.length; i++){
+  ingredients1.push(products[i].ingredients)
+}
+console.log(ingredients1)
+ var result = _(ingredients1).chain()
+ .map(function(x) {return x})
  .flatten()
  .reduce(function(acc, nextIngr) { 
+    if (ingredientCount[nextIngr] === undefined) {
+      ingredientCount[nextIngr] =1;
+    } else if (ingredientCount[nextIngr] !== undefined) {
+      ingredientCount[nextIngr] += 1;
+    }
+    acc = nextIngr;
+  } ,0)
 
-   return ingredientCount[acc] = (ingredientCount[acc] || 0) +1
- },0)
- .value();
-    expect(ingredientCount['artichoke']).toBe(1);
+    expect(ingredientCount['mushrooms']).toBe(2);
   });
 
   /*********************************************************************************/
